@@ -2,15 +2,18 @@
 # OFNHP leadership. Drives /leadership/.
 # Source: https://ofnhp.aft.org/leadership (checked 2026-11-22)
 #
-# Each person:
-#   name:  full name
-#   role:  their seat, e.g. "Tech Chair"
-#   title: (optional) their job, e.g. "Registered Nurse"
-#   email: (optional) address only, no "mailto:"
-#   photo: (optional) address of a headshot in the live site's Files & Media.
-#          Square photos work best. Without one, the card shows initials.
+# HOW IT'S ORGANIZED
+#   employer → sites (worksites; leave name "" if there's only one) → units
+#   Each unit has ONE chair and any number of vice_chairs. The page always
+#   shows the chair first, then vice chairs in the order listed, so the
+#   hierarchy can't get shuffled by accident.
+#   Units show in the order listed here.
 #
-# Open seats: list them under "open:" for that worksite (just the seat name).
+# A person:  { name: "...", email: "..." }   (email optional)
+#   photo: (optional) headshot address from the live site's Files & Media.
+#
+# An OPEN seat: write   chair: open   (or list "open" under vice_chairs).
+#   Open seats are collected into one "These seats need a leader" panel.
 #
 # ⚠ EMAILS TO CONFIRM (copied from the live page; flagged, not guessed):
 #   - Rhea Hindemit: live page had "@ofhhp.org" (typo); set to @ofnhp.org below.
@@ -26,7 +29,7 @@ bylaws_url: "https://ofnhp.aft.org/sites/default/files/constitution_cmte_2017_pr
 
 executive:
   - { name: "Sarina Roher",   role: "President",      email: "sroher@ofnhp.org" }
-  - { name: "Jeremy Gardner", role: "Vice President", email: "jgardner@ofnhp.org" }
+  - { name: "Jeremy Gardner", role: "Vice President", email: "jgardener@ofnhp.org" }
   - { name: "Joshua Holt",    role: "Treasurer",      email: "jholt@ofnhp.org" }
   - { name: "Nicholas Eng",   role: "Secretary",      email: "Neng@ofnhp.org" }
 
@@ -35,63 +38,85 @@ employers:
     id: "kaiser"
     sites:
       - name: ""
-        officers:
-          - { name: "Katie Johnson",        role: "RN Chair",       title: "Registered Nurse",             email: "kjohnson@ofnhp.org" }
-          - { name: "Geoffrey Nighswonger", role: "RN Vice Chair",                                         email: "gnighswonger@ofnhp.org" }
-          - { name: "Mary Coffelt",         role: "RN Vice Chair",                                         email: "mcoffelt@ofnhp.org" }
-          - { name: "Rachel Scholz",        role: "ONA Chair",                                             email: "rscholz@ofnhp.org" }
-          - { name: "Dylan West",           role: "Pro Chair",      title: "Mental Health",                email: "dylan.c.west@outlook.com" }
-          - { name: "Kristen Rohde",        role: "Pro Vice Chair", title: "Physical Therapist",           email: "krohde@ofnhp.org" }
-          - { name: "Rhea Hindemit",        role: "Tech Chair",                                            email: "RHindemit@ofnhp.org" }
-          - { name: "Kellie Brewer",        role: "Tech Vice Chair",                                       email: "kbrewer@ofnhp.org" }
-          - { name: "Gina Mann",            role: "Lab Pros Chair", title: "Medical Technologist",         email: "gmann@ofnhp.org" }
-          - { name: "Maarof Sadiq",         role: "RDH Chair",      title: "Registered Dental Hygienist",  email: "msadiq@ofnhp.org" }
+        units:
+          - name: "Registered Nurses"
+            chair: { name: "Katie Johnson", email: "kjohnson@ofnhp.org" }
+            vice_chairs:
+              - { name: "Mary Coffelt", email: "mcoffelt@ofnhp.org" }
+              - { name: "Geoffrey Nighswonger", email: "gnightswonger@ofnhp.org" }
+          - name: "ONA Nurses"
+            chair: { name: "Rachel Scholz", email: "rsholz@ofnhp.org" }
+          - name: "Professional Employees"
+            chair: { name: "Dylan West", email: "dylan.c.west@outlook.com" }
+            vice_chairs:
+              - { name: "Kristen Rohde", email: "krohde@ofnhp.org" }
+          - name: "Technical Employees"
+            chair: { name: "Rhea Hindemit", email: "RHindemit@ofnhp.org" }
+            vice_chairs:
+              - { name: "Kellie Brewer", email: "kbrewer@ofnhp.org" }
+          - name: "Lab Professionals"
+            chair: { name: "Gina Mann", email: "gmann@ofnhp.org" }
+          - name: "Dental Hygienists"
+            chair: { name: "Maarof Sadiq", email: "msadiq@ofnhp.org" }
 
   - name: "PeaceHealth"
     id: "peacehealth"
     sites:
       - name: "Southwest Medical Center"
-        officers:
-          - { name: "Brian Adair",    role: "Tech Chair",                           email: "BAdair@ofnhp.org" }
-          - { name: "Jodi Atteberry", role: "Service & Maintenance Chair",          email: "jatteberry@ofnhp.org" }
-          - { name: "Conor Daniels",  role: "Service & Maintenance Vice Chair",     email: "cdaniels@ofnhp.org" }
+        units:
+          - name: "Technical Employees"
+            chair: { name: "Brian Adair", email: "BAdair@ofnhp.org" }
+          - name: "Service & Maintenance"
+            chair: { name: "Jodi Atteberry", email: "jatteberry@ofnhp.org" }
+            vice_chairs:
+              - { name: "Conor Daniels", email: "cdaniels@ofnhp.org" }
       - name: "Sacred Heart RiverBend / University District"
-        officers:
-          - { name: "Robin Hendrix", role: "Tech Chair", title: "Tech", email: "rhendrix@ofnhp.org" }
+        units:
+          - name: "Technical Employees"
+            chair: { name: "Robin Hendrix", email: "rhendrix@ofnhp.org" }
       - name: "St. John Medical Center"
-        open:
-          - "Lab Pro Chair"
+        units:
+          - name: "Lab Professionals"
+            chair: open
 
   - name: "Legacy"
     id: "legacy"
     sites:
       - name: "Legacy Meridian Park"
-        officers:
-          - { name: "Sean Weiss", role: "Tech Chair", email: "sweiss@ofnhp.org" }
+        units:
+          - name: "Technical Employees"
+            chair: { name: "Sean Weiss", email: "sweiss@ofnhp.org" }
 
   - name: "St. Charles"
     id: "st-charles"
     sites:
       - name: "Bend St. Charles Medical Center"
-        officers:
-          - { name: "Tom Stewart", role: "Tech Chair", title: "Certified Surgical Technologist", email: "stewart@ofnhp.org" }
+        units:
+          - name: "Technical Employees"
+            chair: { name: "Tom Stewart", email: "stewart@ofnhp.org" }
 
   - name: "Adventist Health"
     id: "adventist"
     sites:
       - name: "Mid-Columbia Medical Center"
-        open:
-          - "Tech Chair"
+        units:
+          - name: "Technical Employees"
+            chair: open
 
   - name: "Labcorp"
     id: "labcorp"
     sites:
-      - name: ""
-        open:
-          - "Central Lab"
-          - "Halsey"
-          - "Legacy Meridian Park, Tualatin, Bridgeport & Woodburn"
-          - "Legacy Emanuel (Inpatient & Outpatient), Cedar Hills & Cornell"
-          - "Legacy Salmon Creek & Camas"
-          - "Mt. Hood (Inpatient & Outpatient)"
-          - "Good Samaritan"
+      - name: "Central Lab"
+        units: [ { name: "Labcorp", chair: open } ]
+      - name: "Halsey"
+        units: [ { name: "Labcorp", chair: open } ]
+      - name: "Legacy Meridian Park, Tualatin, Bridgeport & Woodburn"
+        units: [ { name: "Labcorp", chair: open } ]
+      - name: "Legacy Emanuel (Inpatient & Outpatient), Cedar Hills & Cornell"
+        units: [ { name: "Labcorp", chair: open } ]
+      - name: "Legacy Salmon Creek & Camas"
+        units: [ { name: "Labcorp", chair: open } ]
+      - name: "Mt. Hood (Inpatient & Outpatient)"
+        units: [ { name: "Labcorp", chair: open } ]
+      - name: "Good Samaritan"
+        units: [ { name: "Labcorp", chair: open } ]
