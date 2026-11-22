@@ -182,9 +182,11 @@ section.block { padding: 72px 0; }
 .camp-go { margin-top: auto; padding-top: 10px; font: 700 15px/1 var(--body); color: var(--red-dark); }
 .camp:hover .camp-go { text-decoration: underline; }
 
-.camp.urgent { background: var(--ink); border-color: var(--ink); color: #fff; }
+/* Brand Charcoal: white text on it is 7:1. Description text stays pure white
+   because a lighter grey drops toward the 4.5:1 minimum on this background. */
+.camp.urgent { background: var(--charcoal); border-color: var(--charcoal); color: #fff; }
 .camp.urgent h3 { color: #fff; }
-.camp.urgent p { color: #E4E4E4; }
+.camp.urgent p { color: #fff; }
 .camp.urgent .camp-go { color: #fff; }
 .camp.urgent:hover { border-color: var(--cerulean); }
 
