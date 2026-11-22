@@ -1,0 +1,32 @@
+---
+layout: page
+title: "Report Unsafe Staffing"
+eyebrow: "Get help"
+lede: "Short-staffed, missed a break, or mandated to stay? Pick where you work. Every report builds the record the union uses to enforce staffing standards, and it documents that you objected to the assignment."
+description: "Report unsafe staffing, missed breaks or mandatory overtime: the right OHA, ADO or ONA form for every OFNHP workplace."
+---
+{%- comment -%}
+  The routes come from _data/staffing.yml. Edit them there, not here.
+{%- endcomment -%}
+<div class="route-grid">
+  {%- for group in site.data.staffing.groups %}
+  <section class="route-group" aria-labelledby="g{{ forloop.index }}">
+    <h2 id="g{{ forloop.index }}">{{ group.name }}</h2>
+    <ul class="routes">
+      {%- for r in group.routes %}
+      <li>
+        <a class="route" href="{{ r.url }}">
+          <span><strong>{{ r.who }}</strong>{% if r.note %}<span class="who">{{ r.note }}</span>{% endif %}</span>
+          <span class="dest{% if r.form contains 'OHA' %} oha{% endif %}">{{ r.form }}</span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endfor %}
+</div>
+
+<aside class="callout">
+  <p><strong>What's an ADO?</strong> An Assignment Despite Objection form records unsafe staffing, missed breaks and mandatory overtime, and shows you accepted the assignment under protest.</p>
+  <p>Not sure which form is yours? <a href="https://ofnhp.aft.org/steward-roster">Ask your steward</a> or call the union office at <a href="tel:{{ site.data.site.phone_link }}">{{ site.data.site.phone }}</a>. Background: <a href="https://ofnhp.aft.org/resources/resources-oregons-hospital-staffing-bill">Oregon staffing law resources</a> · <a href="https://ofnhp.aft.org/ado">ADO page on the current site</a>.</p>
+</aside>

@@ -1,0 +1,46 @@
+# ============================================================================
+# Where each member reports unsafe staffing. Drives /staffing/.
+# Source: https://ofnhp.aft.org/ado (checked 2026-11-22)
+#
+# form: the label on the badge. "OHA form" gets the bright badge.
+#
+# ⚠ CONFIRM: the Kaiser "Inpatient Techs, Lab Pros & Pros" row follows the
+#   2024 notice on the live page (they keep using the ADO form until the OHA
+#   rollout completes). If they now file with OHA, change that row's url to
+#   the OHA form and its form to "OHA form".
+# ============================================================================
+
+groups:
+  - name: "Kaiser Permanente"
+    routes:
+      - who: "Inpatient RNs at KSMC & KWMC"
+        note: "File with the state under Oregon's staffing law. The union still sees the data."
+        form: "OHA form"
+        url: "https://www.surveymonkey.com/r/OregonHospitalStaffingComplaint"
+      - who: "Inpatient Techs, Lab Pros & Pros at KSMC & KWMC"
+        note: "Assignment Despite Objection"
+        form: "ADO form"
+        url: "https://form.jotform.com/211606081939154"
+      - who: "Outpatient"
+        note: "All bargaining units"
+        form: "ADO form"
+        url: "https://form.jotform.com/211406590767055"
+      - who: "Continuing Care Services"
+        note: "Assignment Despite Objection"
+        form: "ADO form"
+        url: "https://form.jotform.com/211445776373158"
+
+  - name: "Other employers"
+    routes:
+      - who: "PeaceHealth"
+        note: "All facilities"
+        form: "ADO form"
+        url: "https://form.jotform.com/211996419879174"
+      - who: "Providence Milwaukie"
+        note: "Staffing Request & Documentation form, hosted by ONA"
+        form: "ONA form"
+        url: "https://www.oregonrn.org/page/115"
+      - who: "Labcorp"
+        note: "All locations"
+        form: "ADO form"
+        url: "https://form.jotform.com/251736931533156"

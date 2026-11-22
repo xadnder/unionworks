@@ -1,0 +1,11 @@
+{%- comment -%}
+  Turns a url from _data into a working link.
+  WHY: our own pages ("/staffing/") need the site's baseurl in front on
+  GitHub Pages; outside links (https://…) must be left exactly as they are.
+  Usage: {% include href.html url=item.url %}
+{%- endcomment -%}
+{%- if include.url contains "://" or include.url contains "mailto:" or include.url contains "tel:" -%}
+{{ include.url }}
+{%- else -%}
+{{ include.url | relative_url }}
+{%- endif -%}

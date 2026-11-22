@@ -1,0 +1,27 @@
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    {%- comment -%}
+      LOGO CROP — the live logo file (1000x165) is mostly transparent padding;
+      the mark sits at x 296–676, y 9–158. .logo-crop shows only the mark at
+      its true proportions (see assets/css/site.css) instead of hosting a copy.
+    {%- endcomment %}
+    <a class="logo-crop" href="{{ '/' | relative_url }}">
+      <img src="{{ site.data.site.logo }}" alt="{{ site.data.site.name }}, {{ site.data.site.local }} — home">
+    </a>
+
+    <div class="desktop-nav">{% include nav.html label="Main" %}</div>
+
+    <div class="header-actions">
+      <a class="btn btn-red btn-sm" href="{{ site.data.site.join_url }}">Join OFNHP</a>
+      <details class="menu-toggle">
+        <summary aria-label="Open menu"><span class="burger" aria-hidden="true"></span>Menu</summary>
+        <div class="mobile-panel">
+          {% include nav.html label="Main (mobile)" %}
+          <a class="btn btn-red" href="{{ site.data.site.join_url }}">Join OFNHP</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

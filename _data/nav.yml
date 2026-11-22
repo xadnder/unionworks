@@ -1,0 +1,66 @@
+# ============================================================================
+# The main menu. Grouped by what a member is trying to do, not by org chart.
+#
+# url: a link starting with "/" is a page in THIS site (e.g. /staffing/).
+#      Anything starting with https:// goes to that address (the live site).
+# lead: true  = shown bold, as the main thing in that menu.
+# divider: true = a thin line before this item.
+# note: small grey text under the item.
+# ============================================================================
+
+- title: "My Contract"
+  items:
+    - { title: "Find my contract", url: "/contracts/", lead: true, note: "Start here: pick your employer" }
+    - { title: "Kaiser Permanente", url: "https://ofnhp.aft.org/kaiser-agreements", divider: true }
+    - { title: "PeaceHealth", url: "https://ofnhp.aft.org/peacehealth" }
+    - { title: "Providence Milwaukie", url: "https://ofnhp.aft.org/pmh-agreement" }
+    - { title: "St. Charles (Bend)", url: "https://ofnhp.aft.org/st-charles-medical-center-contracts" }
+    - { title: "Adventist Health Columbia Gorge", url: "https://ofnhp.aft.org/contracts/adventist-contracts" }
+    - { title: "Legacy Meridian Park Techs", url: "https://ofnhp.aft.org/sites/default/files/media/documents/2025/Legacy%20Merdian%20Park%20OFNHP%20Collective%20Bargaining%20Agreement%204936-2076-8549%20v.3%20-%20F.Signed_SR%20%28LG%29.pdf", note: "PDF" }
+    - { title: "Labcorp", url: "https://ofnhp.aft.org/contracts/labcorp" }
+    - { title: "Bargaining updates", url: "https://ofnhp.aft.org/bargaining-updates-2", divider: true }
+    - { title: "Bargaining units", url: "https://ofnhp.aft.org/bargaining-units" }
+    - { title: "Key documents", url: "https://ofnhp.aft.org/key-documents" }
+
+- title: "Get Help"
+  items:
+    - { title: "Report unsafe staffing", url: "/staffing/", lead: true, note: "Missed breaks, mandatory overtime, ADO" }
+    - { title: "File a grievance", url: "https://ofnhp.aft.org/grievance-form", lead: true }
+    - { title: "Find my steward", url: "https://ofnhp.aft.org/steward-roster", lead: true }
+    - { title: "Contract specialists", url: "https://ofnhp.aft.org/contract-specialists", divider: true }
+    - { title: "Representation", url: "https://ofnhp.aft.org/representation" }
+    - { title: "Forms", url: "https://ofnhp.aft.org/forms" }
+    - { title: "Oregon staffing law resources", url: "https://ofnhp.aft.org/resources/resources-oregons-hospital-staffing-bill" }
+    - { title: "Contact the union office", url: "https://ofnhp.aft.org/contact-us" }
+
+- title: "Get Involved"
+  items:
+    - { title: "Become a steward", url: "https://ofnhp.aft.org/become-steward" }
+    - { title: "Steward Assembly", url: "https://ofnhp.aft.org/steward-delegates-assembly" }
+    - { title: "Take action", url: "https://ofnhp.aft.org/take-action" }
+    - { title: "Political Education & Action Committee", url: "https://ofnhp.aft.org/get-active" }
+    - { title: "Election Central", url: "https://ofnhp.aft.org/election-central" }
+    - { title: "Events calendar", url: "https://ofnhp.aft.org/events-calendar" }
+
+- title: "Membership"
+  items:
+    - { title: "Become a member", url: "https://ofnhp.aft.org/member-benefits/review-your-union-rights-and-become-member", lead: true }
+    - { title: "Member benefits", url: "https://ofnhp.aft.org/member-benefits" }
+    - { title: "New employee orientation", url: "https://ofnhp.aft.org/new-employee-orientation-0" }
+    - { title: "Professional development", url: "https://ofnhp.aft.org/professional-development" }
+    - { title: "How our union works", url: "https://ofnhp.aft.org/learn-about-how-our-union-works" }
+    - { title: "Retirees", url: "https://ofnhp.aft.org/retirees" }
+
+- title: "News"
+  items:
+    - { title: "Latest news", url: "https://ofnhp.aft.org/news" }
+    - { title: "Press releases", url: "https://ofnhp.aft.org/press-releases" }
+
+- title: "About"
+  items:
+    - { title: "About OFNHP", url: "https://ofnhp.aft.org/about-us" }
+    - { title: "Leadership", url: "https://ofnhp.aft.org/leadership" }
+    - { title: "Union staff", url: "https://ofnhp.aft.org/union-staff" }
+    - { title: "Contact us", url: "https://ofnhp.aft.org/contact-us" }
+    - { title: "Alliance of Health Care Unions", url: "https://www.ahcunions.org/", note: "External site", divider: true }
+    - { title: "AFT", url: "https://www.aft.org/", note: "External site" }

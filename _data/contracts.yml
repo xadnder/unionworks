@@ -1,0 +1,33 @@
+# ============================================================================
+# Employers for /contracts/. Each links to that employer's page on the live
+# site, where the contract PDFs, wage scales and side letters live.
+# Source: https://ofnhp.aft.org/contracts/find-your-contract-below (checked 2026-11-22)
+#
+# units: the bargaining units at that employer, as short labels.
+# ============================================================================
+
+- name: "Kaiser Permanente"
+  units: "RN · ONA RN · PRO · TECH · LABPRO · RDH"
+  note: "Each unit's contract plus the Alliance National Agreement."
+  url: "https://ofnhp.aft.org/kaiser-agreements"
+
+- name: "PeaceHealth"
+  units: "Sacred Heart Techs · Southwest Professionals"
+  url: "https://ofnhp.aft.org/peacehealth"
+
+- name: "Providence Milwaukie"
+  url: "https://ofnhp.aft.org/pmh-agreement"
+
+- name: "St. Charles (Bend)"
+  url: "https://ofnhp.aft.org/st-charles-medical-center-contracts"
+
+- name: "Adventist Health Columbia Gorge (The Dalles)"
+  url: "https://ofnhp.aft.org/contracts/adventist-contracts"
+
+- name: "Legacy Meridian Park"
+  units: "Techs"
+  note: "Opens the signed contract (PDF)."
+  url: "https://ofnhp.aft.org/sites/default/files/media/documents/2025/Legacy%20Merdian%20Park%20OFNHP%20Collective%20Bargaining%20Agreement%204936-2076-8549%20v.3%20-%20F.Signed_SR%20%28LG%29.pdf"
+
+- name: "Labcorp"
+  url: "https://ofnhp.aft.org/contracts/labcorp"

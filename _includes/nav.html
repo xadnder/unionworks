@@ -1,0 +1,23 @@
+{%- comment -%}
+  The main menu, built from _data/nav.yml. Included twice by the header
+  (desktop bar and phone menu) so both always match.
+  <details>/<summary> make the dropdowns work with no script at all, and they
+  work with the keyboard. assets/js/site.js only adds niceties (one open at a
+  time, close on Escape / outside click).
+{%- endcomment -%}
+<nav class="nav" aria-label="{{ include.label | default: 'Main' }}">
+  {%- for menu in site.data.nav %}
+  <details>
+    <summary>{{ menu.title }}</summary>
+    <div class="panel">
+      {%- for item in menu.items %}
+      {%- if item.divider %}<hr>{% endif %}
+      <a href="{% include href.html url=item.url %}">
+        {%- if item.lead %}<strong>{{ item.title }}</strong>{% else %}{{ item.title }}{% endif -%}
+        {%- if item.note %}<span class="sub">{{ item.note }}</span>{% endif -%}
+      </a>
+      {%- endfor %}
+    </div>
+  </details>
+  {%- endfor %}
+</nav>

@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{%- comment -%}
+  Inner pages: a red title band, then the page's own content.
+  Front matter: title (required), lede (optional one-sentence intro).
+{%- endcomment -%}
+<section class="page-head">
+  <div class="wrap">
+    {%- if page.eyebrow %}<span class="eyebrow">{{ page.eyebrow }}</span>{% endif %}
+    <h1>{{ page.title }}</h1>
+    {%- if page.lede %}<p>{{ page.lede }}</p>{% endif %}
+  </div>
+</section>
+
+<div class="wrap page-body">
+  {{ content }}
+</div>

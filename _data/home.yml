@@ -1,0 +1,67 @@
+# ============================================================================
+# Homepage content. Edit the words here; the page layout picks them up.
+# Every photo address points at the live site's Files & Media.
+# ============================================================================
+
+# The four reasons members visit. "icon" must be one of:
+# contract, staffing, steward, grievance (drawn in _includes/icon.html).
+tasks:
+  - { icon: contract,  title: "Find my contract",       url: "/contracts/", text: "Your contract, wage scale and side letters, by employer.", go: "Choose your employer" }
+  - { icon: staffing,  title: "Report unsafe staffing", url: "/staffing/",  text: "Short-staffed, missed breaks or mandatory overtime? Document it.", go: "Pick your form" }
+  - { icon: steward,   title: "Find my steward",        url: "https://ofnhp.aft.org/steward-roster", text: "A trained coworker who can answer questions and back you up.", go: "See the roster" }
+  - { icon: grievance, title: "File a grievance",       url: "https://ofnhp.aft.org/grievance-form", text: "Think your contract was violated? Start the process here.", go: "Open the form" }
+
+# Active campaigns: retire a line when the fight ends.
+# status: "vote" shows a bright "Vote now" badge; anything else shows as written.
+campaigns:
+  - title: "PeaceHealth Sacred Heart Techs"
+    status: "vote"
+    text: "Tentative agreement reached. See what's in it and how to vote."
+    url: "https://ofnhp.aft.org/news/sacred-heart-techs-have-tentative-agreement-voting-begins-monday"
+  - title: "PeaceHealth Southwest Pros"
+    status: "Bargaining"
+    text: "Fighting for a fair first contract. Bargaining central."
+    url: "https://ofnhp.aft.org/bargaining-updates/phsw-pro-bargaining-central-0"
+  - title: "Legacy Meridian Park Techs"
+    status: "Bargaining"
+    text: "2026 bargaining updates."
+    url: "https://ofnhp.aft.org/legacy-meridian-park-bargaining-updates-2026"
+
+# News cards: the first one shows larger. Keep it to three.
+# Write each summary by hand and end on a full sentence.
+news:
+  - title: "Sacred Heart Techs have a tentative agreement, and voting begins Monday"
+    tag: "Bargaining"
+    summary: "After more than a year at the table, the bargaining team won significant raises and other improvements. Here's what's in the agreement, when and how to vote, and where to get your questions answered."
+    url: "https://ofnhp.aft.org/news/sacred-heart-techs-have-tentative-agreement-voting-begins-monday"
+    photo: "https://ofnhp.aft.org/sites/default/files/media/images/2026/837919270_18597728530066636_1147124632587964928_n-1.jpg"
+    alt: "Sacred Heart Techs holding a Fairness, Transparency, Respect sign"
+  - title: "PeaceHealth must invest in caregivers, not corporate profits"
+    tag: "PeaceHealth Southwest"
+    summary: "Nearly 250 professionals, joined by community supporters and labor leaders, walked the picket line on November 10 for a fair first contract."
+    url: "https://ofnhp.aft.org/news/peacehealth-must-invest-caregivers-not-corporate-profits"
+    photo: "https://ofnhp.aft.org/sites/default/files/media/images/2026/675119475_1378656964285270_5322376573180650404_n.jpg"
+    alt: "PeaceHealth Professionals holding a Compassion Includes Caregivers sign"
+  - title: "OFNHP-endorsed candidates sweep election night"
+    tag: "Politics"
+    summary: "For the first time ever, every candidate OFNHP endorsed won. Thank you to every member who voted and volunteered."
+    url: "https://ofnhp.aft.org/election-central/ofnhp-endorsed-candidates-sweep-election-night"
+    photo: "https://ofnhp.aft.org/sites/default/files/media/images/2026/picture1_0.jpg"
+    alt: "OFNHP members celebrating on election night"
+
+involved:
+  - { title: "Become a steward", url: "https://ofnhp.aft.org/become-steward", text: "Learn the contract and stand up for coworkers on your unit." }
+  - { title: "Take action",      url: "https://ofnhp.aft.org/take-action",    text: "Current petitions, actions and ways to show up." }
+  - { title: "PEAC",             url: "https://ofnhp.aft.org/get-active",     text: "Political Education & Action Committee: shape the laws that shape our work." }
+  - { title: "Election Central", url: "https://ofnhp.aft.org/election-central", text: "Endorsements and voting information for healthcare workers." }
+
+resources:
+  - { title: "New employee orientation", url: "https://ofnhp.aft.org/new-employee-orientation-0" }
+  - { title: "Member benefits",          url: "https://ofnhp.aft.org/member-benefits" }
+  - { title: "Forms",                    url: "https://ofnhp.aft.org/forms" }
+  - { title: "Key documents",            url: "https://ofnhp.aft.org/key-documents" }
+  - { title: "Professional development", url: "https://ofnhp.aft.org/professional-development" }
+  - { title: "Bargaining units",         url: "https://ofnhp.aft.org/bargaining-units" }
+  - { title: "Contract specialists",     url: "https://ofnhp.aft.org/contract-specialists" }
+  - { title: "Retirees",                 url: "https://ofnhp.aft.org/retirees" }
+  - { title: "How our union works",      url: "https://ofnhp.aft.org/learn-about-how-our-union-works" }

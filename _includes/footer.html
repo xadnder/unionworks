@@ -1,0 +1,54 @@
+{%- assign s = site.data.site -%}
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="foot-logo" href="{{ '/' | relative_url }}"><span class="logo-crop"><img src="{{ s.logo }}" alt="{{ s.name }}, {{ s.local }}"></span></a>
+      <p>{{ s.full_name }}, {{ s.local }}.</p>
+      <ul>
+        <li>Phone: <a href="tel:{{ s.phone_link }}">{{ s.phone }}</a></li>
+        <li>Email: <a href="mailto:{{ s.email }}">{{ s.email }}</a></li>
+        <li>Fax: {{ s.fax }}</li>
+      </ul>
+      <ul class="social">
+        {%- for link in s.social %}
+        <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+
+    <div>
+      <h2>Offices</h2>
+      <div class="offices">
+        {%- for office in s.offices %}
+        <address><strong>{{ office.name }}</strong>{{ office.street }}<br>{{ office.city }}<br>{{ office.hours }}</address>
+        {%- endfor %}
+      </div>
+    </div>
+
+    <div>
+      <h2>Members</h2>
+      <ul>
+        {%- for task in site.data.home.tasks %}
+        <li><a href="{% include href.html url=task.url %}">{{ task.title }}</a></li>
+        {%- endfor %}
+        <li><a href="https://ofnhp.aft.org/member-benefits">Member benefits</a></li>
+        <li><a href="https://ofnhp.aft.org/events-calendar">Events calendar</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>About</h2>
+      <ul>
+        {%- assign about = site.data.nav | where: "title", "About" | first %}
+        {%- for item in about.items %}
+        <li><a href="{% include href.html url=item.url %}">{{ item.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap legal">
+    <span>© American Federation of Teachers, AFL-CIO. Photos and documents are hosted on <a href="{{ site.live }}">ofnhp.aft.org</a>.</span>
+    <span><a href="https://ofnhp.aft.org/privacy-policy">Privacy policy</a> · <a href="https://ofnhp.aft.org/sms-policy">SMS policy</a></span>
+  </div>
+</footer>

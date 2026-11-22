@@ -1,0 +1,28 @@
+---
+layout: page
+title: "Find My Contract"
+eyebrow: "My contract"
+lede: "Pick your employer. Each page has your bargaining unit's contract, wage scale and side letters."
+description: "Find your OFNHP union contract, wage scale and side letters by employer."
+---
+{%- comment -%}
+  Employers come from _data/contracts.yml. Edit them there, not here.
+{%- endcomment -%}
+<ul class="employers">
+  {%- for e in site.data.contracts %}
+  <li>
+    <a class="employer" href="{{ e.url }}">
+      <span>
+        <strong>{{ e.name }}</strong>
+        {%- if e.units %}<span class="units">{{ e.units }}</span>{% endif %}
+        {%- if e.note %}<span class="who">{{ e.note }}</span>{% endif %}
+      </span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </li>
+  {%- endfor %}
+</ul>
+
+<aside class="callout">
+  <p><strong>Can't find what you need?</strong> Ask your <a href="https://ofnhp.aft.org/steward-roster">steward</a> or a <a href="https://ofnhp.aft.org/contract-specialists">contract specialist</a>, or call {{ site.data.site.phone }}. Bargaining news: <a href="https://ofnhp.aft.org/bargaining-updates-2">bargaining updates</a>.</p>
+</aside>

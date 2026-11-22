@@ -1,0 +1,50 @@
+# ============================================================================
+# Who we are and how to reach us. Used by the header, footer and homepage.
+# Source: https://ofnhp.aft.org/contact-us (checked 2026-11-22)
+# ============================================================================
+
+name: "OFNHP"
+local: "AFT Local 5017"
+full_name: "Oregon Federation of Nurses and Health Professionals"
+members: "7,000"
+
+logo: "https://ofnhp.aft.org/sites/default/files/banner_image/2019-11/oh_ofnhp_new-logo.png"
+favicon: "https://ofnhp.aft.org/themes/custom/aftstateweb/favicon.ico"
+
+join_url: "https://ofnhp.aft.org/member-benefits/review-your-union-rights-and-become-member"
+
+phone: "(503) 657-9974"
+phone_link: "+15036579974"
+email: "itsmyunion@ofnhp.org"
+fax: "(503) 657-7456"
+
+offices:
+  - name: "Tigard"
+    street: "11560 SW 67th Ave"
+    city: "Tigard, OR 97223"
+    hours: "Email the staff member you need to set an appointment"
+  - name: "Vancouver"
+    street: "316 SE 123rd Ave A-1"
+    city: "Vancouver, WA 98683"
+    hours: "By appointment"
+  - name: "Eugene–Springfield"
+    street: "1020 Harlow Rd"
+    city: "Springfield, OR 97477"
+    hours: "By appointment"
+
+social:
+  - name: "Facebook"
+    url: "https://www.facebook.com/ofnhp/"
+  - name: "Instagram"
+    url: "https://www.instagram.com/ofnhp/"
+  - name: "X (Twitter)"
+    url: "https://twitter.com/ofnhp"
+
+# Homepage banner. "photo_focus" = which part of the photo stays visible
+# when it's cropped ("center center" is a safe default).
+hero:
+  eyebrow: "OFNHP · AFT Local 5017"
+  headline: "Patient Defenders"
+  text: "7,000 nurses and healthcare professionals across Oregon and Southwest Washington, fighting for a strong future for patient care."
+  photo: "https://ofnhp.aft.org/sites/default/files/media/images/2024/dsc03223_2.jpg"
+  photo_focus: "70% 60%"
