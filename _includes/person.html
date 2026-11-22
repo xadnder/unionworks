@@ -1,0 +1,25 @@
+{%- comment -%}
+  One leader's card. Used by /leadership/.
+  Usage: {% include person.html person=p size="lg" %}   (size: "lg" or omit)
+  Shows the headshot if the person has a photo, otherwise their initials,
+  so the page looks finished whether or not photos exist yet.
+{%- endcomment -%}
+{%- assign p = include.person -%}
+{%- assign parts = p.name | split: " " -%}
+{%- assign first = parts | first -%}
+{%- assign last = parts | last -%}
+<article class="person{% if include.size == 'lg' %} person--lg{% endif %}">
+  {%- if p.photo %}
+  <img class="avatar" src="{{ p.photo }}" alt="Photo of {{ p.name }}" loading="lazy">
+  {%- else %}
+  <span class="avatar" aria-hidden="true">{{ first | slice: 0 }}{{ last | slice: 0 }}</span>
+  {%- endif %}
+  <div class="person__text">
+    <span class="person__role">{{ p.role }}</span>
+    <h3>{{ p.name }}</h3>
+    {%- if p.title %}<span class="person__title">{{ p.title }}</span>{% endif %}
+    {%- if p.email %}
+    <a class="person__email" href="mailto:{{ p.email }}">Email {{ first }}<span class="visually-hidden"> {{ last }}</span></a>
+    {%- endif %}
+  </div>
+</article>
