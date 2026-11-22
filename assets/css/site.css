@@ -167,18 +167,32 @@ section.block { padding: 72px 0; }
 .section-head a.more { font: 700 16px/1 var(--body); text-decoration: none; }
 .section-head a.more:hover { text-decoration: underline; }
 
-/* ---------- Campaigns ---------- */
-.campaigns { padding: 56px 0 0; }
+/* ---------- Campaigns ----------
+   Calm by default; an "urgent" card (status: vote) goes dark so the one thing
+   members must act on stands out. Content sits at the top of every card and
+   the action line sits at the bottom, so cards line up whatever their length. */
+.campaigns { padding: 56px 0 64px; }
 .camp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.camp { display: flex; gap: 16px; align-items: center; background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--red);
-  border-radius: var(--radius); padding: 18px 20px; text-decoration: none; color: var(--ink); }
-.camp:hover { border-color: var(--red); }
-.camp h3 { font-size: 21px; }
-.camp p { margin: 4px 0 0; font-size: 15px; color: var(--charcoal); }
-.chip { display: inline-block; font: 700 12px/1 var(--body); letter-spacing: .08em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px;
-  background: var(--red-tint); color: var(--red-dark); margin-bottom: 8px; }
-.chip.live { background: var(--cerulean); color: var(--ink); }   /* the one "act now" signal */
+.camp { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; background: #fff; color: var(--ink);
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 22px 20px; text-decoration: none;
+  box-shadow: 0 10px 24px -20px rgba(46,47,49,.5); transition: border-color .15s, transform .15s; }
+.camp:hover { border-color: var(--charcoal); transform: translateY(-2px); }
+.camp h3 { font-size: 22px; }
+.camp p { margin: 0; font-size: 15.5px; line-height: 1.5; color: var(--charcoal); }
+.camp-go { margin-top: auto; padding-top: 10px; font: 700 15px/1 var(--body); color: var(--red-dark); }
+.camp:hover .camp-go { text-decoration: underline; }
+
+.camp.urgent { background: var(--ink); border-color: var(--ink); color: #fff; }
+.camp.urgent h3 { color: #fff; }
+.camp.urgent p { color: #E4E4E4; }
+.camp.urgent .camp-go { color: #fff; }
+.camp.urgent:hover { border-color: var(--cerulean); }
+
+.chip { display: inline-block; font: 700 12px/1 var(--body); letter-spacing: .08em; text-transform: uppercase;
+  padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--charcoal); background: #fff; }
+.chip.live { background: var(--cerulean); border-color: var(--cerulean); color: var(--ink); }   /* the one "act now" signal */
 @media (max-width: 860px) { .camp-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .camp:hover { transform: none; } }
 
 /* ---------- News ---------- */
 section.block.news { background: var(--mist); }
