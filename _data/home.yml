@@ -11,20 +11,25 @@ tasks:
   - { icon: steward,   title: "Find my steward",        url: "https://ofnhp.aft.org/steward-roster", text: "A trained coworker who can answer questions and back you up.", go: "See the roster" }
   - { icon: grievance, title: "File a grievance",       url: "https://ofnhp.aft.org/grievance-form", text: "Think your contract was violated? Start the process here.", go: "Open the form" }
 
-# Active campaigns: retire a line when the fight ends.
-# status: "vote" shows a bright "Vote now" badge; anything else shows as written.
+# Active campaigns: retire one when the fight ends.
+# status: "vote" makes the card dark with a bright "Vote now" badge (use it for
+#   anything members must act on now). Any other word shows as a quiet label.
+# action: the words on the card's link line. Say what clicking does.
 campaigns:
   - title: "PeaceHealth Sacred Heart Techs"
     status: "vote"
-    text: "Tentative agreement reached. See what's in it and how to vote."
+    text: "Tentative agreement reached. Voting begins Monday."
+    action: "See the TA and how to vote"
     url: "https://ofnhp.aft.org/news/sacred-heart-techs-have-tentative-agreement-voting-begins-monday"
   - title: "PeaceHealth Southwest Pros"
     status: "Bargaining"
-    text: "Fighting for a fair first contract. Bargaining central."
+    text: "Nearly 250 professionals fighting for a fair first contract."
+    action: "Follow bargaining"
     url: "https://ofnhp.aft.org/bargaining-updates/phsw-pro-bargaining-central-0"
   - title: "Legacy Meridian Park Techs"
     status: "Bargaining"
-    text: "2026 bargaining updates."
+    text: "Techs are at the table for their 2026 contract."
+    action: "Follow bargaining"
     url: "https://ofnhp.aft.org/legacy-meridian-park-bargaining-updates-2026"
 
 # News cards: the first one shows larger. Keep it to three.
