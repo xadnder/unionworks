@@ -281,6 +281,364 @@ section.block.news { background: var(--mist); }
 /* ---------- Leadership page ----------
    Each card: bargaining unit (small label) → name → board position → email.
    Chairs carry a brand-red edge and vice chairs a grey one, so the
+   hierarchy reads at a glance; the position text itself stays plain. No placeholder art: a headshot shows only
+   when one is added in _data/leadership.yml. */
+.lead-section { margin-bottom: 56px; }
+.lead-section > h2 { font-size: clamp(30px, 3.4vw, 40px); color: var(--ink); margin-bottom: 18px; }
+.lead-intro { max-width: 46em; margin: -6px 0 20px; }
+
+.people { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.people--exec { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 980px) { .people--exec { grid-template-columns: repeat(2, 1fr); } }
+
+.person { display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 16px 18px; }
+.person--chair { border-left: 4px solid var(--red); }
+.person--vice  { border-left: 4px solid var(--line); }
+.person .photo { flex: none; width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+.person__text { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.person__unit { font: 700 12px/1.3 var(--body); letter-spacing: .07em; text-transform: uppercase; color: var(--red-dark); }
+.person h3 { font-size: 22px; }
+.person__position { font-size: 15.5px; color: var(--charcoal); }
+.person__email { margin-top: 6px; font-weight: 700; font-size: 15px; text-decoration: none; overflow-wrap: anywhere; }
+.person__email:hover { text-decoration: underline; }
+
+/* Executive officers: larger, centered, with a solid email button */
+.person--lg { flex-direction: column; align-items: center; text-align: center; padding: 26px 18px 22px; gap: 12px;
+  border-top: 4px solid var(--red); box-shadow: 0 14px 30px -22px rgba(46,47,49,.5); }
+.person--lg .photo { width: 110px; height: 110px; }
+.person--lg .person__text { align-items: center; }
+.person--lg .person__unit { font-size: 13px; }
+.person--lg h3 { font-size: 28px; }
+.person--lg .person__email { margin-top: 12px; background: var(--red-tint); color: var(--red-dark); border-radius: 999px; padding: 9px 16px; }
+.person--lg .person__email:hover { background: var(--red); color: #fff; text-decoration: none; }
+/* Phones: keep the four officers as a compact 2x2 */
+@media (max-width: 520px) {
+  .people--exec { gap: 10px; }
+  .person--lg { padding: 18px 10px 16px; gap: 8px; }
+  .person--lg h3 { font-size: 22px; }
+  .person--lg .person__email { margin-top: 6px; padding: 8px 12px; font-size: 14px; white-space: nowrap; }
+}
+
+.jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 34px; }
+.jump a { border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; font-weight: 600; font-size: 15px;
+  color: var(--ink); text-decoration: none; background: #fff; }
+.jump a:hover { border-color: var(--red); color: var(--red-dark); }
+
+.employer-block { padding-top: 26px; margin-bottom: 30px; border-top: 1px solid var(--line); scroll-margin-top: 100px; }
+.employer-name { font-size: 30px; margin-bottom: 14px; }
+.site { margin-bottom: 18px; }
+.site-name { font: 400 22px/1.1 var(--sub); letter-spacing: .05em; color: var(--charcoal); margin: 0 0 10px; }
+
+.open-seats { display: grid; grid-template-columns: minmax(240px, 1fr) 1.2fr; gap: 18px 28px; margin-top: 6px;
+  background: var(--red-tint); border: 2px dashed rgba(196,36,32,.35); border-radius: var(--radius); padding: 22px; }
+.open-seats p { margin: 6px 0 0; font-size: 16px; }
+.open-seats ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; align-content: start; }
+.open-seats li { background: #fff; border-radius: 8px; padding: 9px 12px; font-weight: 600; color: var(--ink); font-size: 15.5px; }
+.seat-site { display: block; font-weight: 400; font-size: 13.5px; color: var(--charcoal); }
+@media (max-width: 760px) { .open-seats { grid-template-columns: 1fr; } }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--ink); color: #E4E4E4; font-size: 16px; }
+.foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 32px; padding: 56px 24px 36px; }
+.site-footer h2 { font: 400 22px/1 var(--sub); letter-spacing: .06em; color: #fff; margin-bottom: 14px; }
+.site-footer a { color: #fff; text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+.site-footer ul { list-style: none; margin: 0; padding: 0; }
+.site-footer li { margin-bottom: 8px; }
+.site-footer address { font-style: normal; line-height: 1.5; }
+.foot-logo { background: #fff; border-radius: 10px; padding: 12px 16px; display: inline-block; margin-bottom: 16px; }
+.foot-logo .logo-crop { --s: .3; }
+.site-footer .social { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.site-footer .social a { display: inline-block; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 7px 14px; font-weight: 600; }
+.site-footer .social a:hover { border-color: var(--cerulean); text-decoration: none; }
+.offices { display: grid; gap: 14px; }
+.offices strong { color: #fff; display: block; }
+.legal { border-top: 1px solid rgba(255,255,255,.12); padding: 20px 24px 28px; font-size: 14px; color: #C9C9CA; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+@media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .foot-grid { grid-template-columns: 1fr; } }/* ==========================================================================
+   OFNHP site styles
+   Brand source: OFNHP style guide, "Local Colors" + branded fonts.
+     OFNHP Red #E52B28 · Charcoal #58595B · White · Cerulean #00AEEF
+     Oswald (headings) · Bebas Neue (short labels, sparingly) · Open Sans (body)
+     Kaushan Script is deliberately unused: the guide reserves it for quotations.
+
+   Two darker SHADES exist only for readability, not as new colors:
+     - White on OFNHP Red is 4.46:1, just under the 4.5:1 minimum for normal
+       text. So true red carries fills and LARGE/BOLD type (buttons use 19px
+       bold labels, which count as large text), and small red text uses
+       --red-dark (5.8:1).
+     - Cerulean on white is 2.5:1, so it never carries text on white. It's
+       used for decoration and for badges with dark text (5.3:1).
+   ========================================================================== */
+
+:root {
+  --red: #E52B28;
+  --charcoal: #58595B;
+  --cerulean: #00AEEF;
+  --white: #fff;
+
+  --red-dark: #C42420;
+  --red-tint: #FDECEB;
+  --ink: #2E2F31;        /* deep charcoal: headings, footer */
+  --mist: #F4F4F4;       /* light charcoal tint: alternating bands */
+  --line: #E3E3E4;
+
+  --head: 'Oswald', 'Arial Narrow', Arial, sans-serif;
+  --sub: 'Bebas Neue', 'Oswald', 'Arial Narrow', sans-serif;
+  --body: 'Open Sans', 'Segoe UI', Arial, sans-serif;
+
+  --radius: 12px;
+  --wrap: 1160px;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body { margin: 0; background: #fff; color: var(--charcoal); font: 400 17px/1.6 var(--body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: var(--red-dark); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { font-family: var(--head); font-weight: 500; line-height: 1.15; margin: 0; color: var(--ink); }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+/* 24px keeps Bebas Neue at "large text" size for contrast purposes */
+.eyebrow { display: block; font: 400 24px/1 var(--sub); letter-spacing: .06em; color: var(--red-dark); }
+
+/* Text for screen readers only (e.g. the last name in "Email Sarina") */
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.skip { position: absolute; left: 12px; top: -60px; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 8px; z-index: 100; font-weight: 700; text-decoration: none; }
+.skip:focus { top: 12px; }
+
+/* ---------- Buttons ---------- */
+.btn { white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 700 19px/1 var(--body);
+  text-decoration: none; border-radius: 999px; padding: 15px 26px; border: 2px solid transparent; transition: background .15s, color .15s; }
+.btn-red { background: var(--red); color: #fff; }
+.btn-red:hover { background: var(--red-dark); }
+.btn-white { background: #fff; color: var(--red-dark); }
+.btn-white:hover { background: var(--red-tint); }
+.btn-ghost { border-color: rgba(255,255,255,.75); color: #fff; }
+.btn-ghost:hover { background: rgba(255,255,255,.14); }
+.btn-sm { padding: 11px 20px; }
+
+/* ---------- Logo crop ----------
+   The live logo file (1000x165) is mostly transparent padding; the mark sits
+   at x 296–676, y 9–158. This window shows only the mark at its true
+   proportions. --s is the scale; change it to resize the logo.
+   flex: none stops the header from squeezing it. */
+.logo-crop { --s: .38; display: block; flex: none; position: relative; overflow: hidden;
+  width: calc(380px * var(--s)); height: calc(150px * var(--s)); }
+.logo-crop img { position: absolute; max-width: none;
+  width: calc(1000px * var(--s)); height: calc(165px * var(--s));
+  left: calc(-296px * var(--s)); top: calc(-9px * var(--s)); }
+
+/* ---------- Header + menu ---------- */
+.site-header { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
+.header-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 84px; }
+.header-actions { display: flex; align-items: center; gap: 10px; }
+
+.nav { display: flex; align-items: center; gap: 2px; }
+.nav details { position: relative; }
+.nav summary { list-style: none; cursor: pointer; font: 600 15px/1 var(--body); color: var(--ink); padding: 12px; border-radius: 8px;
+  display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.nav summary::-webkit-details-marker { display: none; }
+.nav summary::after { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px); opacity: .6; }
+.nav details[open] summary, .nav summary:hover { background: var(--red-tint); color: var(--red-dark); }
+.nav .panel { position: absolute; top: calc(100% + 8px); left: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 18px 40px -18px rgba(46,47,49,.35); padding: 10px; min-width: 280px; z-index: 60; }
+.nav .panel a { display: block; padding: 9px 12px; border-radius: 8px; color: var(--ink); text-decoration: none; font-size: 16px; }
+.nav .panel a:hover { background: var(--mist); color: var(--red-dark); }
+.nav .panel .sub { display: block; font-size: 13px; color: var(--charcoal); margin-top: 1px; }
+.nav .panel hr { border: 0; border-top: 1px solid var(--line); margin: 6px 4px; }
+.desktop-nav .nav details:last-child .panel { left: auto; right: 0; }
+
+.menu-toggle { display: none; }
+
+@media (max-width: 1040px) {
+  .header-row { min-height: 70px; }
+  .site-header .logo-crop { --s: .3; }
+  .menu-toggle { display: block; }
+  .menu-toggle > summary { list-style: none; cursor: pointer; font: 600 15px/1 var(--body); color: var(--ink); padding: 12px 16px;
+    border: 2px solid var(--line); border-radius: 999px; display: flex; gap: 8px; align-items: center; }
+  .menu-toggle > summary::-webkit-details-marker { display: none; }
+  .menu-toggle .burger { width: 16px; height: 2px; background: var(--ink); position: relative; }
+  .menu-toggle .burger::before, .menu-toggle .burger::after { content: ""; position: absolute; left: 0; width: 16px; height: 2px; background: var(--ink); }
+  .menu-toggle .burger::before { top: -5px; } .menu-toggle .burger::after { top: 5px; }
+  .desktop-nav, .header-actions > .btn { display: none; }
+  .mobile-panel { position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-bottom: 1px solid var(--line);
+    max-height: calc(100vh - 70px); overflow: auto; padding: 8px 24px 24px; box-shadow: 0 20px 30px -20px rgba(0,0,0,.3); }
+  .mobile-panel .nav { flex-direction: column; align-items: stretch; }
+  .mobile-panel .nav summary { justify-content: space-between; padding: 16px 4px; border-radius: 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+  .mobile-panel .nav details[open] summary, .mobile-panel .nav summary:hover { background: none; }
+  .mobile-panel .nav .panel { position: static; box-shadow: none; border: 0; padding: 4px 0 10px; min-width: 0; }
+  .mobile-panel .btn { display: flex; margin-top: 18px; }
+}
+@media (max-width: 420px) {
+  .wrap { padding: 0 18px; }
+  .header-row { gap: 10px; }
+  .site-header .logo-crop { --s: .27; }
+  .menu-toggle > summary { padding: 10px 14px; }
+}
+
+/* ---------- Homepage banner ---------- */
+.hero { position: relative; color: #fff; background: var(--red); overflow: hidden; }
+.hero-photo { position: absolute; inset: 0; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+/* The gradient keeps text readable whatever photo sits behind it. */
+.hero-photo::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(196,36,32,.96) 0%, rgba(229,43,40,.9) 42%, rgba(229,43,40,.35) 75%, rgba(229,43,40,.12) 100%); }
+.hero-inner { position: relative; padding: 84px 0 132px; max-width: 620px; }
+.hero .eyebrow { color: #fff; }
+.hero h1 { color: #fff; font-size: clamp(48px, 7.5vw, 84px); text-transform: uppercase; letter-spacing: .01em; line-height: 1.02; margin: 14px 0 18px; }
+.hero p { font-size: clamp(18px, 2vw, 21px); margin: 0 0 30px; max-width: 34em; color: #fff; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 760px) {
+  .hero-photo::after { background: linear-gradient(180deg, rgba(229,43,40,.5) 0%, rgba(196,36,32,.96) 55%); }
+  .hero-inner { padding: 96px 0 100px; }
+  .hero h1 { margin: 10px 0 12px; }
+  .hero p { margin-bottom: 22px; }
+}
+
+/* ---------- Member tasks (the point of the page) ---------- */
+.tasks { margin-top: -80px; position: relative; z-index: 2; }
+.task-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.task { background: #fff; border-radius: var(--radius); padding: 24px 22px 22px; text-decoration: none; color: var(--ink); border: 1px solid var(--line);
+  box-shadow: 0 14px 30px -20px rgba(46,47,49,.45); display: flex; flex-direction: column; gap: 10px; transition: transform .15s, border-color .15s; }
+.task:hover { transform: translateY(-3px); border-color: var(--red); }
+.task .ico { width: 46px; height: 46px; border-radius: 12px; background: var(--red-tint); color: var(--red); display: grid; place-items: center; }
+.task h2 { font-size: 23px; }
+.task p { margin: 0; font-size: 16px; color: var(--charcoal); line-height: 1.45; }
+.task .go { margin-top: auto; font: 700 15px/1 var(--body); color: var(--red-dark); }
+@media (max-width: 980px) { .task-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) {
+  .tasks { margin-top: -64px; }
+  .task-grid { grid-template-columns: 1fr; gap: 10px; }
+  .task { flex-direction: row; align-items: center; padding: 16px; }
+  .task p, .task .go { display: none; }
+  .task h2 { font-size: 21px; }
+  .task::after { content: "›"; margin-left: auto; font: 500 30px/1 var(--head); color: var(--red); }
+}
+
+/* ---------- Section scaffolding ---------- */
+section.block { padding: 72px 0; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+.section-head h2 { font-size: clamp(32px, 3.8vw, 44px); margin-top: 6px; }
+.section-head a.more { font: 700 16px/1 var(--body); text-decoration: none; }
+.section-head a.more:hover { text-decoration: underline; }
+
+/* ---------- Campaigns ----------
+   Calm by default; an "urgent" card (status: vote) goes dark so the one thing
+   members must act on stands out. Content sits at the top of every card and
+   the action line sits at the bottom, so cards line up whatever their length. */
+.campaigns { padding: 56px 0 64px; }
+.camp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.camp { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; background: #fff; color: var(--ink);
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 22px 20px; text-decoration: none;
+  box-shadow: 0 10px 24px -20px rgba(46,47,49,.5); transition: border-color .15s, transform .15s; }
+.camp:hover { border-color: var(--charcoal); transform: translateY(-2px); }
+.camp h3 { font-size: 22px; }
+.camp p { margin: 0; font-size: 15.5px; line-height: 1.5; color: var(--charcoal); }
+.camp-go { margin-top: auto; padding-top: 10px; font: 700 15px/1 var(--body); color: var(--red-dark); }
+.camp:hover .camp-go { text-decoration: underline; }
+
+/* Brand Charcoal: white text on it is 7:1. Description text stays pure white
+   because a lighter grey drops toward the 4.5:1 minimum on this background. */
+.camp.urgent { background: var(--charcoal); border-color: var(--charcoal); color: #fff; }
+.camp.urgent h3 { color: #fff; }
+.camp.urgent p { color: #fff; }
+.camp.urgent .camp-go { color: #fff; }
+.camp.urgent:hover { border-color: var(--cerulean); }
+
+.chip { display: inline-block; font: 700 12px/1 var(--body); letter-spacing: .08em; text-transform: uppercase;
+  padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--charcoal); background: #fff; }
+.chip.live { background: var(--cerulean); border-color: var(--cerulean); color: var(--ink); }   /* the one "act now" signal */
+@media (max-width: 860px) { .camp-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .camp:hover { transform: none; } }
+
+/* ---------- News ---------- */
+section.block.news { background: var(--mist); }
+.news-grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 22px; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column;
+  text-decoration: none; color: var(--ink); transition: border-color .15s; }
+.card:hover { border-color: var(--red); }
+.card .ph { aspect-ratio: 16/10; overflow: hidden; background: var(--line); }
+.card .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.card:hover .ph img { transform: scale(1.03); }
+.card .body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.card h3 { font-size: 24px; }
+.card.lead h3 { font-size: 30px; }
+.card p { margin: 0; font-size: 16.5px; color: var(--charcoal); }
+.card .read { margin-top: auto; font: 700 15px/1 var(--body); color: var(--red-dark); padding-top: 6px; }
+@media (max-width: 980px) { .news-grid { grid-template-columns: 1fr 1fr; } .card.lead { grid-column: 1 / -1; } }
+@media (max-width: 620px) { .news-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Staffing callout band (homepage) ---------- */
+.staffing-band { background: var(--charcoal); color: #fff; border-top: 6px solid var(--cerulean); }
+.staffing-band__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px 40px; flex-wrap: wrap; }
+.staffing-band .eyebrow { color: #fff; }
+.staffing-band h2 { color: #fff; font-size: clamp(28px, 3.4vw, 40px); margin: 6px 0 10px; }
+.staffing-band p { margin: 0; max-width: 40em; }
+
+/* ---------- Get involved ---------- */
+.involved { background: var(--red-tint); }
+.inv-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.inv { background: #fff; border-radius: var(--radius); padding: 22px; text-decoration: none; color: var(--ink); border: 1px solid transparent; }
+.inv:hover { border-color: var(--red); }
+.inv h3 { font-size: 22px; margin-bottom: 6px; }
+.inv p { margin: 0; font-size: 16px; color: var(--charcoal); }
+@media (max-width: 980px) { .inv-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .inv-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Member resources ---------- */
+.resources ul { list-style: none; margin: 0; padding: 0; columns: 3; column-gap: 32px; }
+.resources li { break-inside: avoid; border-bottom: 1px solid var(--line); }
+.resources li a { display: flex; justify-content: space-between; padding: 14px 2px; text-decoration: none; color: var(--ink); font-weight: 600; }
+.resources li a::after { content: "→"; color: var(--red); }
+.resources li a:hover { color: var(--red-dark); }
+@media (max-width: 860px) { .resources ul { columns: 2; } }
+@media (max-width: 520px) { .resources ul { columns: 1; } }
+
+/* ---------- Join band ---------- */
+.join { background: var(--red); color: #fff; text-align: center; }
+.join h2 { font-size: clamp(32px, 4vw, 46px); color: #fff; text-transform: uppercase; }
+.join p { max-width: 36em; margin: 14px auto 26px; color: #fff; font-size: 19px; }
+
+/* ---------- Inner pages ---------- */
+.page-head { background: var(--red); color: #fff; padding: 56px 0 48px; }
+.page-head .eyebrow { color: #fff; }
+.page-head h1 { color: #fff; font-size: clamp(40px, 5.5vw, 64px); text-transform: uppercase; margin: 8px 0 12px; }
+.page-head p { max-width: 44em; margin: 0; font-size: 19px; color: #fff; }
+.page-body { padding: 48px 24px 72px; }
+.page-body h2 { font-size: 30px; color: var(--red-dark); margin: 0 0 14px; }
+
+/* Staffing routes + employer list share one "big link row" look */
+.route-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+@media (max-width: 860px) { .route-grid { grid-template-columns: 1fr; } }
+.routes, .employers { list-style: none; margin: 0 0 28px; padding: 0; }
+.routes li, .employers li { margin: 0 0 10px; }
+.route, .employer { display: flex; justify-content: space-between; align-items: center; gap: 14px; background: #fff;
+  border: 1px solid var(--line); border-left: 5px solid var(--red); border-radius: 10px; padding: 16px 18px;
+  color: var(--ink); text-decoration: none; }
+.route:hover, .employer:hover { border-color: var(--red); }
+.route > span:first-child, .employer > span:first-child { min-width: 0; }
+.route strong, .employer strong { display: block; font-size: 18px; }
+.who, .units { display: block; font-size: 15px; color: var(--charcoal); }
+.units { font-weight: 600; }
+.dest { flex: none; font: 700 12px/1 var(--body); letter-spacing: .06em; text-transform: uppercase; padding: 7px 10px; border-radius: 999px;
+  background: var(--ink); color: #fff; }
+.dest.oha { background: var(--cerulean); color: var(--ink); }
+.employer .arrow { flex: none; font: 500 26px/1 var(--head); color: var(--red); }
+.employers { max-width: 760px; }
+@media (max-width: 420px) { .route { flex-wrap: wrap; } }
+
+.callout { background: var(--mist); border-left: 5px solid var(--cerulean); border-radius: 8px; padding: 16px 20px; max-width: 760px; }
+.callout p { margin: 0 0 8px; } .callout p:last-child { margin: 0; }
+
+/* ---------- Leadership page ----------
+   Each card: bargaining unit (small label) → name → board position → email.
+   Chairs carry a brand-red edge and vice chairs a grey one, so the
    hierarchy reads at a glance. No placeholder art: a headshot shows only
    when one is added in _data/leadership.yml. */
 .lead-section { margin-bottom: 56px; }
