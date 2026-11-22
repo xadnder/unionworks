@@ -50,12 +50,11 @@ layout: default
     </div>
     <div class="camp-grid">
       {%- for c in home.campaigns %}
-      <a class="camp" href="{% include href.html url=c.url %}">
-        <div>
-          {%- if c.status == "vote" %}<span class="chip live">Vote now</span>{% else %}<span class="chip">{{ c.status }}</span>{% endif %}
-          <h3>{{ c.title }}</h3>
-          <p>{{ c.text }}</p>
-        </div>
+      <a class="camp{% if c.status == "vote" %} urgent{% endif %}" href="{% include href.html url=c.url %}">
+        {%- if c.status == "vote" %}<span class="chip live">Vote now</span>{% else %}<span class="chip">{{ c.status }}</span>{% endif %}
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.text }}</p>
+        <span class="camp-go">{{ c.action | default: "Read more" }} →</span>
       </a>
       {%- endfor %}
     </div>
