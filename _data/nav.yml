@@ -59,7 +59,7 @@
 - title: "About"
   items:
     - { title: "About OFNHP", url: "https://ofnhp.aft.org/about-us" }
-    - { title: "Leadership", url: "https://ofnhp.aft.org/leadership" }
+    - { title: "Leadership", url: "/leadership/" }
     - { title: "Union staff", url: "https://ofnhp.aft.org/union-staff" }
     - { title: "Contact us", url: "https://ofnhp.aft.org/contact-us" }
     - { title: "Alliance of Health Care Unions", url: "https://www.ahcunions.org/", note: "External site", divider: true }
