@@ -1,0 +1,76 @@
+---
+layout: page
+title: "Leadership"
+eyebrow: "About OFNHP"
+lede: "OFNHP is run by its members. Every officer on this page is a working nurse or health professional elected by their coworkers."
+description: "OFNHP's elected officers and bargaining unit leaders, by employer, with how to reach them."
+---
+{%- comment -%}
+  Names, seats and emails come from _data/leadership.yml. Edit them there.
+  Layout: executive officers (large cards) → jump links → one section per
+  employer (worksite groups of cards) → open seats as an invitation to run.
+{%- endcomment -%}
+{%- assign L = site.data.leadership -%}
+
+<section class="lead-section" aria-labelledby="exec">
+  <h2 id="exec">Executive officers</h2>
+  <div class="people people--exec">
+    {%- for p in L.executive %}
+    {% include person.html person=p size="lg" %}
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="lead-section" aria-labelledby="units">
+  <h2 id="units">Bargaining unit leaders</h2>
+  <p class="lead-intro">Every bargaining unit elects a chair to OFNHP's Executive Board. Larger units also elect vice chairs; the <a href="{{ L.bylaws_url }}">Constitution &amp; Bylaws</a> sets how many.</p>
+
+  <nav class="jump" aria-label="Jump to employer">
+    {%- for e in L.employers %}
+    <a href="#{{ e.id }}">{{ e.name }}</a>
+    {%- endfor %}
+  </nav>
+
+  {%- for e in L.employers %}
+  <section class="employer-block" id="{{ e.id }}" aria-labelledby="{{ e.id }}-h">
+    <h3 class="employer-name" id="{{ e.id }}-h">{{ e.name }}</h3>
+
+    {%- comment -%} Filled seats first, grouped by worksite {%- endcomment -%}
+    {%- for s in e.sites %}
+    {%- if s.officers %}
+    <div class="site">
+      {%- if s.name != "" %}<h4 class="site-name">{{ s.name }}</h4>{% endif %}
+      <div class="people">
+        {%- for p in s.officers %}
+        {% include person.html person=p %}
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endif %}
+    {%- endfor %}
+
+    {%- comment -%} Then every open seat at this employer, as one invitation {%- endcomment -%}
+    {%- assign has_open = false -%}
+    {%- for s in e.sites %}{% if s.open %}{% assign has_open = true %}{% endif %}{% endfor -%}
+    {%- if has_open %}
+    <div class="open-seats">
+      <div class="open-seats__text">
+        <span class="eyebrow">Open seats</span>
+        <p><strong>These seats need a leader. It could be you.</strong> Chairs speak for their coworkers on the Executive Board. Talk to a steward or call the office at <a href="tel:{{ site.data.site.phone_link }}">{{ site.data.site.phone }}</a> to learn what's involved.</p>
+      </div>
+      <ul>
+        {%- for s in e.sites %}
+        {%- for seat in s.open %}
+        <li>{% if s.name != "" %}<span class="seat-site">{{ s.name }}</span> {% endif %}{{ seat }}</li>
+        {%- endfor %}
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endif %}
+  </section>
+  {%- endfor %}
+</section>
+
+<aside class="callout">
+  <p><strong>Looking for union staff?</strong> Organizers, contract specialists and office staff are on the <a href="https://ofnhp.aft.org/union-staff">union staff page</a>. Your <a href="https://ofnhp.aft.org/steward-roster">steward</a> is usually the fastest first call.</p>
+</aside>
