@@ -29,9 +29,9 @@ bylaws_url: "https://ofnhp.aft.org/sites/default/files/constitution_cmte_2017_pr
 
 executive:
   - { name: "Sarina Roher",   role: "President",      email: "sroher@ofnhp.org" }
-  - { name: "Jeremy Gardner", role: "Vice President", email: "jgardener@ofnhp.org" }
+  - { name: "Jeremy Gardner", role: "Vice President", email: "jgardner@ofnhp.org" }
   - { name: "Joshua Holt",    role: "Treasurer",      email: "jholt@ofnhp.org" }
-  - { name: "Nicholas Eng",   role: "Secretary",      email: "Neng@ofnhp.org" }
+  - { name: "Nicholas Eng",   role: "Secretary",      email: "neng@ofnhp.org" }
 
 employers:
   - name: "Kaiser Permanente"
@@ -43,9 +43,9 @@ employers:
             chair: { name: "Katie Johnson", email: "kjohnson@ofnhp.org" }
             vice_chairs:
               - { name: "Mary Coffelt", email: "mcoffelt@ofnhp.org" }
-              - { name: "Geoffrey Nighswonger", email: "gnightswonger@ofnhp.org" }
+              - { name: "Geoffrey Nighswonger", email: "gnighswonger@ofnhp.org" }
           - name: "ONA Nurses"
-            chair: { name: "Rachel Scholz", email: "rsholz@ofnhp.org" }
+            chair: { name: "Rachel Scholz", email: "rscholz@ofnhp.org" }
           - name: "Professional Employees"
             chair: { name: "Dylan West", email: "dylan.c.west@outlook.com" }
             vice_chairs:
