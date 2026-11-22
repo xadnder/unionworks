@@ -26,7 +26,7 @@ bylaws_url: "https://ofnhp.aft.org/sites/default/files/constitution_cmte_2017_pr
 
 executive:
   - { name: "Sarina Roher",   role: "President",      email: "sroher@ofnhp.org" }
-  - { name: "Jeremy Gardner", role: "Vice President", email: "jgardener@ofnhp.org" }
+  - { name: "Jeremy Gardner", role: "Vice President", email: "jgardner@ofnhp.org" }
   - { name: "Joshua Holt",    role: "Treasurer",      email: "jholt@ofnhp.org" }
   - { name: "Nicholas Eng",   role: "Secretary",      email: "Neng@ofnhp.org" }
 
@@ -37,9 +37,9 @@ employers:
       - name: ""
         officers:
           - { name: "Katie Johnson",        role: "RN Chair",       title: "Registered Nurse",             email: "kjohnson@ofnhp.org" }
-          - { name: "Geoffrey Nighswonger", role: "RN Vice Chair",                                         email: "gnightswonger@ofnhp.org" }
+          - { name: "Geoffrey Nighswonger", role: "RN Vice Chair",                                         email: "gnighswonger@ofnhp.org" }
           - { name: "Mary Coffelt",         role: "RN Vice Chair",                                         email: "mcoffelt@ofnhp.org" }
-          - { name: "Rachel Scholz",        role: "ONA Chair",                                             email: "rsholz@ofnhp.org" }
+          - { name: "Rachel Scholz",        role: "ONA Chair",                                             email: "rscholz@ofnhp.org" }
           - { name: "Dylan West",           role: "Pro Chair",      title: "Mental Health",                email: "dylan.c.west@outlook.com" }
           - { name: "Kristen Rohde",        role: "Pro Vice Chair", title: "Physical Therapist",           email: "krohde@ofnhp.org" }
           - { name: "Rhea Hindemit",        role: "Tech Chair",                                            email: "RHindemit@ofnhp.org" }
