@@ -1,25 +1,26 @@
 {%- comment -%}
   One leader's card. Used by /leadership/.
-  Usage: {% include person.html person=p size="lg" %}   (size: "lg" or omit)
-  Shows the headshot if the person has a photo, otherwise their initials,
-  so the page looks finished whether or not photos exist yet.
+  Usage:
+    {% include person.html person=p above="Registered Nurses" below="Chair" rank="chair" %}
+    {% include person.html person=p above="President" size="lg" %}
+  above: small label over the name (bargaining unit, or office for executives)
+  below: line under the name (board position), optional
+  rank:  "chair" or "vice" — sets the left accent so chairs read first
+  size:  "lg" for the executive officers
+  A headshot shows only if the person has a photo; there's no placeholder.
 {%- endcomment -%}
 {%- assign p = include.person -%}
-{%- assign parts = p.name | split: " " -%}
-{%- assign first = parts | first -%}
-{%- assign last = parts | last -%}
-<article class="person{% if include.size == 'lg' %} person--lg{% endif %}">
+{%- assign first = p.name | split: " " | first -%}
+<article class="person{% if include.size == 'lg' %} person--lg{% endif %}{% if include.rank %} person--{{ include.rank }}{% endif %}">
   {%- if p.photo %}
-  <img class="avatar" src="{{ p.photo }}" alt="Photo of {{ p.name }}" loading="lazy">
-  {%- else %}
-  <span class="avatar" aria-hidden="true">{{ first | slice: 0 }}{{ last | slice: 0 }}</span>
+  <img class="photo" src="{{ p.photo }}" alt="Photo of {{ p.name }}" loading="lazy">
   {%- endif %}
   <div class="person__text">
-    <span class="person__role">{{ p.role }}</span>
+    {%- if include.above %}<span class="person__unit">{{ include.above }}</span>{% endif %}
     <h3>{{ p.name }}</h3>
-    {%- if p.title %}<span class="person__title">{{ p.title }}</span>{% endif %}
+    {%- if include.below %}<span class="person__position">{{ include.below }}</span>{% endif %}
     {%- if p.email %}
-    <a class="person__email" href="mailto:{{ p.email }}">Email {{ first }}<span class="visually-hidden"> {{ last }}</span></a>
+    <a class="person__email" href="mailto:{{ p.email }}">Email {{ first }}<span class="visually-hidden"> {{ p.name | remove_first: first }}</span></a>
     {%- endif %}
   </div>
 </article>
