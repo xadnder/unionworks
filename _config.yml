@@ -1,0 +1,27 @@
+# ============================================================================
+# OFNHP site — Jekyll settings (read by GitHub Pages on every push)
+#
+# baseurl: GitHub Pages serves a project site at
+#   https://<your-github-username>.github.io/<repo-name>/
+# so every link to our own pages and files needs "/<repo-name>" in front.
+# Set baseurl to "/<repo-name>" (with the slash, no trailing slash).
+# If you later use a custom domain, set baseurl back to "".
+# ============================================================================
+
+title: "OFNHP, AFT Local 5017"
+description: "OFNHP (AFT Local 5017) represents 7,000 nurses and health professionals across Oregon and Southwest Washington. Find your contract, report unsafe staffing, reach your steward, or join."
+baseurl: "/CHANGE-ME-TO-REPO-NAME"
+lang: en
+
+# Photos and documents stay on the live site; this is where they come from.
+live: "https://ofnhp.aft.org"
+
+# Social-share image (shown when someone posts a link on Facebook, text, etc.)
+share_image: "https://ofnhp.aft.org/sites/default/files/media/images/2024/dsc03223_2.jpg"
+
+# Files that are for us, not for the public site.
+exclude:
+  - README.md
+  - BRIEF.md
+  - DECISIONS.md
+  - LICENSE

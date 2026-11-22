@@ -1,1 +1,138 @@
-<html>hello world</html>
+---
+layout: default
+---
+{%- comment -%}
+  Homepage. The words live in _data/site.yml (banner) and _data/home.yml
+  (tasks, campaigns, news, get involved, resources). This file is layout only.
+{%- endcomment -%}
+{%- assign hero = site.data.site.hero -%}
+{%- assign home = site.data.home -%}
+
+<!-- Banner -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-photo">
+    <img src="{{ hero.photo }}" alt="" fetchpriority="high" style="object-position: {{ hero.photo_focus | default: 'center center' }}">
+  </div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">{{ hero.eyebrow }}</span>
+      <h1 id="hero-title">{{ hero.headline }}</h1>
+      <p>{{ hero.text }}</p>
+      <div class="hero-ctas">
+        <a class="btn btn-white" href="{{ site.data.site.join_url }}">Become a member</a>
+        <a class="btn btn-ghost" href="https://ofnhp.aft.org/learn-about-how-our-union-works">How our union works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The four reasons members visit: right under the headline, on every screen size -->
+<section class="tasks" aria-label="Member quick links">
+  <div class="wrap task-grid">
+    {%- for task in home.tasks %}
+    <a class="task" href="{% include href.html url=task.url %}">
+      <span class="ico">{% include icon.html name=task.icon %}</span>
+      <h2>{{ task.title }}</h2>
+      <p>{{ task.text }}</p>
+      <span class="go">{{ task.go }} →</span>
+    </a>
+    {%- endfor %}
+  </div>
+</section>
+
+<!-- Active campaigns -->
+{%- if home.campaigns.size > 0 %}
+<section class="campaigns" aria-labelledby="camp-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Right now</span><h2 id="camp-title">Active campaigns</h2></div>
+      <a class="more" href="https://ofnhp.aft.org/bargaining-updates-2">All bargaining updates →</a>
+    </div>
+    <div class="camp-grid">
+      {%- for c in home.campaigns %}
+      <a class="camp" href="{% include href.html url=c.url %}">
+        <div>
+          {%- if c.status == "vote" %}<span class="chip live">Vote now</span>{% else %}<span class="chip">{{ c.status }}</span>{% endif %}
+          <h3>{{ c.title }}</h3>
+          <p>{{ c.text }}</p>
+        </div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<!-- News -->
+<section class="block news" aria-labelledby="news-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">News</span><h2 id="news-title">Latest from OFNHP</h2></div>
+      <a class="more" href="https://ofnhp.aft.org/news">All news →</a>
+    </div>
+    <div class="news-grid">
+      {%- for n in home.news limit:3 %}
+      <a class="card{% if forloop.first %} lead{% endif %}" href="{% include href.html url=n.url %}">
+        <div class="ph"><img src="{{ n.photo }}" alt="{{ n.alt }}" loading="lazy"></div>
+        <div class="body">
+          <span class="eyebrow">{{ n.tag }}</span>
+          <h3>{{ n.title }}</h3>
+          <p>{{ n.summary }}</p>
+          <span class="read">{% if forloop.first %}Read the details{% else %}Read more{% endif %} →</span>
+        </div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Staffing callout: the full router lives on /staffing/ -->
+<section class="block staffing-band" aria-labelledby="staff-title">
+  <div class="wrap staffing-band__inner">
+    <div>
+      <span class="eyebrow">Get help</span>
+      <h2 id="staff-title">Short-staffed, missed a break, or mandated to stay?</h2>
+      <p>Report it. Every report builds the record the union uses to enforce staffing standards. Pick your workplace and we'll send you to the right form.</p>
+    </div>
+    <a class="btn btn-white" href="{{ '/staffing/' | relative_url }}">Report unsafe staffing</a>
+  </div>
+</section>
+
+<!-- Get involved -->
+<section class="block involved" aria-labelledby="inv-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Get involved</span><h2 id="inv-title">The union is us</h2></div>
+      <a class="more" href="https://ofnhp.aft.org/events-calendar">Events calendar →</a>
+    </div>
+    <div class="inv-grid">
+      {%- for i in home.involved %}
+      <a class="inv" href="{% include href.html url=i.url %}"><h3>{{ i.title }}</h3><p>{{ i.text }}</p></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Member resources -->
+<section class="block resources" aria-labelledby="res-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">For members</span><h2 id="res-title">Member resources</h2></div>
+      <a class="more" href="https://ofnhp.aft.org/resources">All resources →</a>
+    </div>
+    <ul>
+      {%- for r in home.resources %}
+      <li><a href="{% include href.html url=r.url %}">{{ r.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- Join -->
+<section class="block join" aria-labelledby="join-title">
+  <div class="wrap">
+    <h2 id="join-title">Stronger together, safer for patients</h2>
+    <p>Membership is how we win fair contracts, safe staffing and a voice in the decisions that affect our patients. Know your rights and join your coworkers.</p>
+    <a class="btn btn-white" href="{{ site.data.site.join_url }}">Become a member</a>
+  </div>
+</section>
