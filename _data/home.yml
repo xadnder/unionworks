@@ -15,44 +15,54 @@ tasks:
 # status: "vote" makes the card dark with a bright "Vote now" badge (use it for
 #   anything members must act on now). Any other word shows as a quiet label.
 # action: the words on the card's link line. Say what clicking does.
+# Last reviewed 2026-11-27 against ofnhp.aft.org/news:
+#   - Sacred Heart Techs ratified (Nov 25) → card retired.
+#   - Kaiser injunction filed (Nov 25) → card added.
+#   - Legacy Meridian Park: TA vote ran Oct 27–29; no result posted on the
+#     live site yet. Update this card when it is.
 campaigns:
-  - title: "PeaceHealth Sacred Heart Techs"
-    status: "vote"
-    text: "Tentative agreement reached. Voting begins Monday."
-    action: "See the TA and how to vote"
-    url: "https://ofnhp.aft.org/news/sacred-heart-techs-have-tentative-agreement-voting-begins-monday"
+  - title: "Kaiser Northwest jobs"
+    status: "In court"
+    text: "We've asked a federal court to stop Kaiser moving about 50 local patient-care jobs to Georgia."
+    action: "Read about the injunction"
+    url: "https://ofnhp.aft.org/news/ofnhp-files-federal-injunction-against-kaisers-layoffs"
   - title: "PeaceHealth Southwest Pros"
     status: "Bargaining"
     text: "Nearly 250 professionals fighting for a fair first contract."
     action: "Follow bargaining"
     url: "https://ofnhp.aft.org/bargaining-updates/phsw-pro-bargaining-central-0"
   - title: "Legacy Meridian Park Techs"
-    status: "Bargaining"
-    text: "Techs are at the table for their 2026 contract."
-    action: "Follow bargaining"
-    url: "https://ofnhp.aft.org/legacy-meridian-park-bargaining-updates-2026"
+    status: "TA reached"
+    text: "Raises of 3–9%, daily overtime restored and a new Labor Management Committee."
+    action: "See what's in the TA"
+    url: "https://ofnhp.aft.org/news/whats-legacy-meridian-park-2026-tentative-agreement"
 
-# News cards: the first one shows larger. Keep it to three.
+# News cards: newest first; the first one shows larger. Keep it to three.
 # Write each summary by hand and end on a full sentence.
+# Last reviewed 2026-11-27 against ofnhp.aft.org/news.
 news:
-  - title: "Sacred Heart Techs have a tentative agreement, and voting begins Monday"
-    tag: "Bargaining"
-    summary: "After more than a year at the table, the bargaining team won significant raises and other improvements. Here's what's in the agreement, when and how to vote, and where to get your questions answered."
-    url: "https://ofnhp.aft.org/news/sacred-heart-techs-have-tentative-agreement-voting-begins-monday"
-    photo: "https://ofnhp.aft.org/sites/default/files/media/images/2026/837919270_18597728530066636_1147124632587964928_n-1.jpg"
-    alt: "Sacred Heart Techs holding a Fairness, Transparency, Respect sign"
+  - title: "OFNHP files for a federal injunction to stop Kaiser's layoffs"
+    tag: "Kaiser Permanente"
+    summary: "Kaiser plans to eliminate about 50 local patient-care jobs, including RTMC support agents and care coordinators, by January 12 and move the work to Georgia. We've asked a federal court to block it because it violates our ratified contract."
+    url: "https://ofnhp.aft.org/news/ofnhp-files-federal-injunction-against-kaisers-layoffs"
+    # Photo: public domain (released by its author, Ajbenj, on English Wikipedia),
+    # via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Hatfieldcourthouse.jpg
+    # The OFNHP story doesn't name the court; the alt text describes the building only.
+    photo: "https://upload.wikimedia.org/wikipedia/commons/6/69/Hatfieldcourthouse.jpg"
+    photo_focus: "center 35%"
+    alt: "The Mark O. Hatfield U.S. Courthouse in downtown Portland"
+  - title: "Sacred Heart Techs ratify their new contract"
+    tag: "PeaceHealth Sacred Heart"
+    summary: "Nearly 85% voted yes. The three-year deal brings raises of 4%, 4% and 3%, market adjustments for hard-to-fill roles, and higher differentials. Raises start with the next paycheck."
+    url: "https://ofnhp.aft.org/news/phsh-techs-ratify-union-contract"
+    photo: "https://ofnhp.aft.org/sites/default/files/styles/open_graph_image/public/media/images/2026/840133850_18597728746066636_3802888524304629735_n-1.jpg?h=d9386138&itok=NDEpyl9d"
+    alt: "PHSH Techs holding a Union Strong sign signed by their coworkers"
   - title: "PeaceHealth must invest in caregivers, not corporate profits"
     tag: "PeaceHealth Southwest"
     summary: "Nearly 250 professionals, joined by community supporters and labor leaders, walked the picket line on November 10 for a fair first contract."
     url: "https://ofnhp.aft.org/news/peacehealth-must-invest-caregivers-not-corporate-profits"
     photo: "https://ofnhp.aft.org/sites/default/files/media/images/2026/675119475_1378656964285270_5322376573180650404_n.jpg"
     alt: "PeaceHealth Professionals holding a Compassion Includes Caregivers sign"
-  - title: "OFNHP-endorsed candidates sweep election night"
-    tag: "Politics"
-    summary: "For the first time ever, every candidate OFNHP endorsed won. Thank you to every member who voted and volunteered."
-    url: "https://ofnhp.aft.org/election-central/ofnhp-endorsed-candidates-sweep-election-night"
-    photo: "https://ofnhp.aft.org/sites/default/files/media/images/2026/picture1_0.jpg"
-    alt: "OFNHP members celebrating on election night"
 
 involved:
   - { title: "Become a steward", url: "https://ofnhp.aft.org/become-steward", text: "Learn the contract and stand up for coworkers on your unit." }
