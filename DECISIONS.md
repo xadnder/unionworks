@@ -53,3 +53,13 @@
 **Why:** No feed is available to read automatically (BRIEF.md, Known limits), and hand-written summaries end on a full sentence, which fixes the live site's mid-sentence truncation.
 
 **Revisit if:** the live site gains an RSS/JSON feed, or news gets updated more often than someone will edit the file.
+
+### D-8 · 2026-11-27 · Public-domain stock photos allowed when the live site has none
+
+**Decision:** When a story on ofnhp.aft.org has no photo, the homepage may use a **public-domain** image from Wikimedia Commons, hot-linked from upload.wikimedia.org. First use: the Mark O. Hatfield U.S. Courthouse for the Kaiser injunction story.
+
+**Why:** Requested by Joshua; a card without a photo breaks the news row. Public domain only: confirm the license on the file's Commons page and note it beside the photo in `_data/home.yml` (no attribution is legally required, but the note keeps the record).
+
+**Narrows D-3** (hot-link from ofnhp.aft.org), which still applies to everything else.
+
+**Watch:** The image describes a place, not an event. Its alt text says what the building is, never that something happened there unless the story says so.
