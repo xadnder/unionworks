@@ -72,7 +72,7 @@ layout: default
     <div class="news-grid">
       {%- for n in home.news limit:3 %}
       <a class="card{% if forloop.first %} lead{% endif %}" href="{% include href.html url=n.url %}">
-        <div class="ph"><img src="{{ n.photo }}" alt="{{ n.alt }}" loading="lazy"></div>
+        <div class="ph"><img src="{{ n.photo }}" alt="{{ n.alt }}" loading="lazy"{% if n.photo_focus %} style="object-position: {{ n.photo_focus }}"{% endif %}></div>
         <div class="body">
           <span class="eyebrow">{{ n.tag }}</span>
           <h3>{{ n.title }}</h3>
